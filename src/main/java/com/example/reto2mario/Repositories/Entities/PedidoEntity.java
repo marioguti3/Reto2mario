@@ -4,6 +4,7 @@ import java.time.DateTimeException;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,10 +14,10 @@ public class PedidoEntity{
     
    
 
-    private @Id @GeneratedValue Long id;
-    String date;
-    String nombre_usuario;
-    String estado;
+    private @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id;
+   private  String date;
+   private  String nombre_usuario;
+  private   String estado;
 
     public PedidoEntity(Long id, String date, String nombre_usuario, String estado) {
         this.id = id;

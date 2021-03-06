@@ -2,6 +2,7 @@ package com.example.reto2mario.Services.Models;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -64,10 +65,21 @@ public class PedidoService {
               .collect(Collectors.toList());
     }
 
+
     public List<PedidoDTO> getById(Long id) {
         return pedidoRepository.findById(id).stream()
         .map(x -> modelMapper.map(x, PedidoDTO.class))
               .collect(Collectors.toList());
     }
+
+   /*  public List<PedidoDTO> findByUserIdWMethod(Long id) {
+        return EntitiesToDTO(pedidoRepository.findById(id));
+      
+    }
+
+    public List<PedidoDTO> EntitiesToDTO(Collection<PedidoEntity>pedido){
+        return pedido.stream().map(x -> modelMapper.map(x, PedidoDTO.class))
+        .collect(Collectors.toList());
+    } */
 
 }

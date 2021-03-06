@@ -2,6 +2,7 @@ package com.example.reto2mario.Repositories.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,14 +11,14 @@ import javax.persistence.Table;
 public class ProductEntity{
       
      
-    private @Id @GeneratedValue Long id;
-    String nombre;
-    String precio;
-    String urlimagen;
+    private @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id;
+   private  String nombre;
+    private String precio;
+   private  String urlimagen;
 
 
-    public ProductEntity(Long id, String nombre, String precio, String urlimagen) {
-        this.id = id;
+    public ProductEntity( String nombre, String precio, String urlimagen) {
+      
         this.nombre = nombre;
         this.precio = precio;
         this.urlimagen = urlimagen;
