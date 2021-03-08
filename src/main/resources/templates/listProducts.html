@@ -1,0 +1,21 @@
+
+<html xmlns="http://www.thymeleaf.org">
+<header>
+
+</header>
+<header th:insert="~{fragments/changelang.html :: header}">
+    </header>
+
+<body>
+    <div th:replace="~{fragments/changelang.html :: body}">
+    </div>
+    <ul th:each="product : ${products}">
+        <li> 
+            <span style="color:blue" th:text="${product.nombre},${product.precio}"></span>
+            <span>Editar</span>
+            <button>Eliminar</button>
+        </li>
+    </ul>
+    
+</body>   
+</html>

@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+</header>
+
+<body th:object="${product}">
+    <form th:action = "*{id} == null?
+    @{/v2/products} :
+    @{|/v2/products/*{id}|}"
+
+    th:method="POST"
+    th:value="*{id}">
+<div th:replace="~{fragments/changelang.html :: body}">
+</div>
+<p th:if="*{id} !=null"><span th:text="#{id}"></span><input th:field="{id}"></p>
+<p><span th:text="#{nombre}"></span><input th:field="*{nombre}"></p>
+<p><input type="submit" th:value="#{submit}"/></p>
+</form>
+
+
+</body>
+</html>
