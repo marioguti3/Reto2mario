@@ -14,7 +14,7 @@ public class PedidoEntity{
     
    
 
-    private @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id;
+    private @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id; // para que no se sigan sumando los ids
    private  String date;
    private  String nombre_usuario;
   private   String estado;
