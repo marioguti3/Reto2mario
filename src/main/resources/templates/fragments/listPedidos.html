@@ -1,4 +1,3 @@
-
 <html xmlns="http://www.thymeleaf.org">
 <header>
 
@@ -9,10 +8,11 @@
 <body>
     <div th:replace="~{fragments/changelang.html :: body}">
     </div>
-    <ul th:each="product : ${products}" th:object="${product}">
+    <ul th:each="pedido : ${pedidos}" th:object="${pedido}">
         <li> 
-            <span style="color:blue" th:text="${product.nombre}"></span>
-            <span style="color:blue" th:text="${product.precio}"></span>
+            <span style="color:blue" th:text="${pedido.nombre_usuario}"></span>
+            <span style="color:blue" th:text="${pedido.date}"></span>
+            <span style="color:blue" th:text="${pedido.estado}"></span>
            <img th:src="@{*{urlimagen}}" width="250px"  >
             <span>Editar</span>
             <button>Eliminar</button>

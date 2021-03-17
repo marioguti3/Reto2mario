@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("tienda/productos")
 public class ProductViewController {
     
-    /*   private final ProductService productService;
+       private final ProductService productService;
     
     ProductViewController(ProductService productService){
         this.productService = productService;
@@ -44,5 +44,6 @@ public class ProductViewController {
     product = productOrEmpty.get();
     mv.addObject("product", product);
         return mv;
-    }    */
+    }    
+
 }

@@ -19,11 +19,12 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
-	compile('com.microsoft.sqlserver:mssql-jdbc')
+	// compile('com.microsoft.sqlserver:mssql-jdbc')
+	compile('org.modelmapper:modelmapper:1.1.0')
 }
 
-test {
+/* test {
 	useJUnitPlatform()
-}
+} */

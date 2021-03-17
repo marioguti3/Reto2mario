@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("tienda/pedidos")
 public class PedidoViewController {
     
- /*     private final PedidoService pedidoService;
+     private final PedidoService pedidoService;
     
     PedidoViewController(PedidoService pedidoService){
         this.pedidoService = pedidoService;
@@ -25,7 +25,7 @@ public class PedidoViewController {
     @GetMapping
     public ModelAndView PedidosV2(){
         ModelAndView mv = new ModelAndView("listPedidos");
-       mv.addObject("products", pedidoService.getAll());
+       mv.addObject("pedidos", pedidoService.getAll());
         return mv;
     }
 
@@ -46,5 +46,5 @@ public class PedidoViewController {
     pedido = pedidoOrEmpty.get();
     mv.addObject("pedido", pedido);
         return mv;
-    }   */
+    }   
 }
