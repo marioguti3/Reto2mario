@@ -3,8 +3,9 @@ package com.example.reto2mario.Web.API;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.reto2mario.Services.Models.AllPedidoDTO;
 import com.example.reto2mario.Services.Models.PedidoDTO;
-import com.example.reto2mario.Services.Models.PedidoService;
+import com.example.reto2mario.Services.PedidoService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,7 +67,10 @@ public class PedidoController {
        return  pedidoService.getById(id);
 
     }
-
+    @GetMapping("/pedidosAll/{id}") // http://localhost:2222/v2/orders/pedidosAll/4
+    public AllPedidoDTO GetAllOrders(@PathVariable("id")Long id){
+        return pedidoService.createFull(id);
+    }
   
         }
      

@@ -26,10 +26,10 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
             @Param("nombre") String nombre);
 
 
-/*     @Query(value = "SELECT p" + "FROM Productos p" + "(WHERE : precio= 0 OR p.precio=:precio)" 
-    "AND (:nombre=OR p.nombre LIKE %:nombre%")
-    Collection <ProductEntity>  findByTitlePrice(
-        @Param("precio","nombre")String precio, String nombre); */
+     @Query(value = "SELECT p, pp.cantidad FROM PedidoProduct pp "+
+            " INNER JOIN Productos p ON pp.idProducto = p.id "+
+            " WHERE pp.idPedido= :id ")
+            List<Object[]> findByOrderId(@Param("id") Long id); 
     
 
         }

@@ -1,4 +1,4 @@
-package com.example.reto2mario.Services.Models;
+package com.example.reto2mario.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,11 +10,14 @@ import org.modelmapper.ModelMapper;
 
 import com.example.reto2mario.Repositories.Entities.PedidoEntity;
 import com.example.reto2mario.Repositories.Interfaces.PedidoRepository;
+import com.example.reto2mario.Services.Models.AllPedidoDTO;
+import com.example.reto2mario.Services.Models.PedidoDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class PedidoService {
-
+@Autowired
+private ProductService productService;
     @Autowired
     private PedidoRepository pedidoRepository;
     @Autowired
@@ -72,14 +75,17 @@ public class PedidoService {
               .collect(Collectors.toList());
     }
 
-   /*  public List<PedidoDTO> findByUserIdWMethod(Long id) {
-        return EntitiesToDTO(pedidoRepository.findById(id));
-      
+    
+    
+public PedidoEntity findByPedido(Long id){
+        return pedidoRepository.findByPedido(id);
+
+    }
+    
+    public AllPedidoDTO createFull(Long id){
+        PedidoEntity entity = pedidoRepository.findByPedido(id);
+        return new AllPedidoDTO( productService.findByOrderProduct(id),entity);
     }
 
-    public List<PedidoDTO> EntitiesToDTO(Collection<PedidoEntity>pedido){
-        return pedido.stream().map(x -> modelMapper.map(x, PedidoDTO.class))
-        .collect(Collectors.toList());
-    } */
 
 }

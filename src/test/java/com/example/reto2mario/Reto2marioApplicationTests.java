@@ -1,4 +1,4 @@
-package com.example.reto2mario;
+/* package com.example.reto2mario;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,3 +11,4 @@ class Reto2marioApplicationTests {
 	}
 
 }
+ */

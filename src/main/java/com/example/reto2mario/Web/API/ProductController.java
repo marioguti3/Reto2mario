@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.reto2mario.Services.Models.ProductDTO;
-import com.example.reto2mario.Services.Models.ProductService;
+import com.example.reto2mario.Services.ProductService;
 
 import java.util.List;
 import java.util.Optional;

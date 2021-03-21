@@ -1,7 +1,8 @@
 package com.example.reto2mario.Web.Config;
 
-import com.example.reto2mario.Services.Models.PedidoService;
-import com.example.reto2mario.Services.Models.ProductService;
+import com.example.reto2mario.Services.PedidoProductService;
+import com.example.reto2mario.Services.PedidoService;
+import com.example.reto2mario.Services.ProductService;
 
 import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
@@ -18,6 +19,11 @@ public class DI {
     @Bean
     PedidoService createPedidoService() {
         return new PedidoService();
+    }
+
+    @Bean
+    PedidoProductService createPedidoProductService(){
+        return new PedidoProductService();
     }
     @Bean
     ModelMapper createModelMapper() {

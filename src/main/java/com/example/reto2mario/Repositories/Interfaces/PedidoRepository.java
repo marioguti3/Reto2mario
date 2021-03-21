@@ -23,4 +23,9 @@ public interface PedidoRepository extends JpaRepository<PedidoEntity, Long> {
 
     @Query(value = "SELECT p " + " FROM Pedidos p " + "WHERE nombre_usuario = :nombre_usuario")
         Collection<PedidoEntity> findByName( @Param("nombre_usuario") String nombre_usuario);
+
+
+     @Query(value = "SELECT O FROM Pedidos O "+
+    "WHERE O.id = :id")
+    PedidoEntity findByPedido(@Param("id") Long id);
 }

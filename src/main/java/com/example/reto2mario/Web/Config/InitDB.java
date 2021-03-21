@@ -2,7 +2,9 @@
 package com.example.reto2mario.Web.Config;
 
 import com.example.reto2mario.Repositories.Entities.PedidoEntity;
+import com.example.reto2mario.Repositories.Entities.PedidoProductEntity;
 import com.example.reto2mario.Repositories.Entities.ProductEntity;
+import com.example.reto2mario.Repositories.Interfaces.PedidoProductRepository;
 import com.example.reto2mario.Repositories.Interfaces.PedidoRepository;
 import com.example.reto2mario.Repositories.Interfaces.ProductRepository;
 
@@ -13,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class InitDB {
     @Bean
-    CommandLineRunner initDatabase(ProductRepository repository ,  PedidoRepository repository2 ){
+    CommandLineRunner initDatabase(ProductRepository repository ,  PedidoRepository repository2 , PedidoProductRepository repository3 ){
         return args ->{
 
             repository.save(new ProductEntity("Webcam 1080P Full HD ANVASK","30","https://images-na.ssl-images-amazon.com/images/I/71vPDq1rWDL._AC_SL1500_.jpg"));
@@ -29,6 +31,11 @@ public class InitDB {
            repository2.save(new PedidoEntity(2L,"12/02/2019","MEL","ACEPTADO"));
            repository2.save(new PedidoEntity(3L,"1/06/2019","BENITO","ENVIADO"));
            repository2.save(new PedidoEntity(4L,"24/02/2019","CAMELA","CANCELADO"));  
+
+           repository3.save(new PedidoProductEntity(1L, 1L, 5));
+           repository3.save(new PedidoProductEntity(2L, 2L, 8));
+           repository3.save(new PedidoProductEntity(3L, 3L, 3));
+           repository3.save(new PedidoProductEntity(4L, 4L, 9));
             
         };
         };

@@ -1,6 +1,7 @@
 
-package com.example.reto2mario.Services.Models;
+package com.example.reto2mario.Services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -8,6 +9,8 @@ import java.util.stream.Collectors;
 
 import com.example.reto2mario.Repositories.Entities.ProductEntity;
 import com.example.reto2mario.Repositories.Interfaces.ProductRepository;
+import com.example.reto2mario.Services.Models.ProductCantidadDTO;
+import com.example.reto2mario.Services.Models.ProductDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -77,6 +80,20 @@ public class ProductService {
               .collect(Collectors.toList());
     }
 
+
+    public List<ProductCantidadDTO> GetByProductCantidad(List<Object[]> input){
+        List<ProductCantidadDTO> result = new ArrayList<ProductCantidadDTO>();
+        for(Object[] object : input){
+            result.add(new ProductCantidadDTO((ProductEntity)object[0],(int)object[1]));
+        }
+
+        return result;
+
+    }
+
+    public List<ProductCantidadDTO> findByOrderProduct(Long id){
+        return GetByProductCantidad(productRepository.findByOrderId(id));
+    }
 
 
 }

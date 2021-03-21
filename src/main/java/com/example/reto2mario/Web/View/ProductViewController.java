@@ -1,7 +1,7 @@
 package com.example.reto2mario.Web.View;
 
 import com.example.reto2mario.Services.Models.ProductDTO;
-import com.example.reto2mario.Services.Models.ProductService;
+import com.example.reto2mario.Services.ProductService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
